@@ -1,0 +1,27 @@
+body {
+    background-color: #495057;
+    overflow-x: hidden;
+}
+
+.navbar-nav {
+
+    .nav-item {
+        border: 1px solid black;
+        border-radius: 18px;
+        margin-left: 5px;
+
+        .active {
+            color: white;
+        }
+
+    }
+
+    .nav-item:hover {
+        background-color: rgb(95, 92, 48);
+
+        .nav-link {
+            color: beige;
+        }
+    }
+
+}

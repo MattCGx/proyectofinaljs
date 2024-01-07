@@ -1,69 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jane the Pinscher | Inicio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/styles.css">
-  <title>Jane The Pinscher</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="./CSS/styles.css" />
+  <link rel="icon" type="image/png" href="favicon.ico" />
 </head>
 
 <body>
-  <header class="row">
-    <nav class="navbar navbar-expand-lg bg-dark sticky-top">
-      <div class="container-fluid justify-content-end">
-        <a class="navbar-brand" href="#">
-          <img src="./assets/img/logo.png" alt="Logo" width="60px" height="60px" class="ms-3">
-        </a>
+  <header class="header sticky-top">
+    <nav class="navbar sticky-top navbar-expand-md navbar-dark gudeaNav">
+      <div class="container-fluid align-items-end">
+        <a class="navbar-brand pt-0 pb-0" href="#"><img class="logo mt-3" width="230px" src="./Assets/img/logoJane.png"
+            alt="Logo" /></a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse barra" id="navbarSupportedContent">
-          <ul class="navbar-nav fs-3 me-auto mb-2 mb-lg-0">
+
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Tienda</a>
+              <a class="nav-link active" aria-current="page" href="#">INICIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sobre Nosotros</a>
+              <a class="nav-link" href="./Pages/menu.html">TIENDA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Unirse</a>
+              <a class="nav-link" href="./Pages/eventos.html">EVENTOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Pages/nosotros.html">SOBRE NOSOTROS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Pages/contacto.html">UNIRSE</a>
+            </li>
+            <li class="ms-5 me-5 nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                PERFIL
+              </a>
+              <ul class="dropdown-menu bg-dark text-center">
+                <li><a class="dropdown-item" href="#">Ver Perfil</a></li>
+                <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+              </ul>
             </li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
-  <main>
-    <div class="content">
 
+
+  <section class="sectionLogoWhatsapp fixed-bottom mb-2 me-2">
+    <a class="animate__animated animate__tada animate__delay-3s animate__repeat-2" href="https://wa.me/5491158929435"
+      target="_blank"><img class="logoWhatsapp" src="./Assets/icons/whatsapp.svg"></a>
+  </section>
+
+
+  <main class="main">
+
+
+    <!--carrousel con fotos-->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./Assets/img/Inicio/taverna1r.jpg" class="d-block w-100 kenburns-top">
+          <div class="carousel-caption d-xs-block">
+            <h5 class="slogan fontTitulo fs-xs-2">EL SABOR DE LA TIERRA MEDIA</h5>
+            <p class="textoSlide fs-md-3">La taberna más acogedora de la Comarca</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./Assets/img/Inicio/taverna2r.jpg" class="d-block w-100 kenburns-top">
+          <div class="carousel-caption d-xs-block">
+            <h5 class="slogan fontTitulo fs-xs-2">LA TIERRA MEDIA EN EL MUNDO REAL</h5>
+            <p class=" textoSlide fs-md-3">Un viaje a la Tierra Media, a través de la comida y el juego</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./Assets/img/Inicio/taverna3r.jpg" class="d-block w-100 kenburns-top">
+          <div class="carousel-caption d-xs-block">
+            <h5 class="slogan fontTitulo fs-xs-2">FORJANDO GRANDES HISTORIAS</h5>
+            <p class=" textoSlide fs-md-3">Un lugar para que los héroes descansen y planeen su próxima misión</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
 
+    <!-- Presentación de la pagina, bloque de texto-->
+    <div class="container-fluid">
+      <section class="row">
+        <div class="bloqueTextoFrontpage col-xs-1 col-md-5 col-lg-5 pt-4 mt-3" data-aos="zoom-in">
+          <h1 class=" fs-2 fontTitulo">¡Bienvenido al Reino de Jane!</h1>
+          <p class="textoFrontpage fs-5">
+            En el corazón de nuestra comunidad se encuentra Jane, la venerada perra pinscher que ha guiado a sus
+            seguidores hacia la iluminación y la alegría. Este no es solo un lugar, sino un santuario dedicado a honrar
+            su majestuosidad y sabiduría canina.
+          </p>
+          <p class="textoFrontpage fs-5">
+            <span class="bold">¿Quién es Jane?</span> EEs más que una mascota; es una deidad de cuatro patas, una guía
+            espiritual que ha inspirado devoción y lealtad inquebrantable. A través de sus ojos centelleantes y su cola
+            siempre en alto, nos enseña lecciones de amor incondicional, gratitud y la importancia de vivir en el
+            momento presente.
+          </p>
+          <p class="textoFrontpage fs-5">
+            <span class="bold">Únete a la Manada</span> dy sumérgete en el misticismo de Jane. Descubre los rituales
+            secretos, las historias sagradas y la profunda conexión que comparten sus seguidores. Este es un lugar donde
+            la dicha canina se entrelaza con la espiritualidad humana, creando un lazo indestructible entre nosotros y
+            nuestra adorada líder de cuatro patas.
+          </p>
+        </div>
 
+        <!-- Foto de Jane -->
+        <div class="mapaGoogle col-xs-12 col-md-6 col-lg-6 mt-3" data-aos="fade-left">
+          <iframe class="mapaIframe"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d820.3865330050536!2d-58.70063432042604!3d-34.666163520787684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1694407296540!5m2!1ses-419!2sar"
+            style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-
-
-
-
-
-    <!-- <div class="sidebar">
-      <a href="#" class="active">Inicio</a>
-      <a href="#">Categorias</a>
-      agregar más elementos de menú 
-  </div> -->
-
+          <p class="direccionMapa ">Av. Pres. Juan Domingo Perón 23899</p>
+          <p class="direccionMapa ">
+            San Antonio de Padua, Provincia de Buenos Aires
+          </p>
+        </div>
+      </section>
+    </div>
 
   </main>
-  <footer></footer>
 
+
+
+  <footer class="footer container-fluid pt-2">
+    <div class="row">
+
+      <section class="footerHorarios text-left col-6">
+        <h3>HORARIO DE ATENCION
+        </h3>
+        <p>Lunes a Viernes 9:00 a 21:00</p>
+        <p>Sabados de 19:00 a 04:00</p>
+      </section>
+
+      <section class="footerRedes me-2 text-center col-5">
+        <h3>SEGUINOS TAMBIEN EN</h3>
+        <div class="contenedorRedes me-auto">
+          <a href="https://www.facebook.com" target="_blank"><img class="logoRedes me-1"
+              src="./Assets/icons/facebook.svg" /></a>
+          <a href="https://www.instagram.com" target="_blank"><img class="logoRedes ms-1"
+              src="./Assets/icons/instagram.svg" /></a>
+        </div>
+      </section>
+    </div>
+
+    <section class="footerCopyright text-center row">
+      <p>Copyright © 2024 Jane the Pinscher - Design by MCGX</p>
+    </section>
+  </footer>
+
+  <!-- <script src="./JS/bootstrap.bundle.min.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
-  <script type="module" src="main.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
