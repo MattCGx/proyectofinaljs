@@ -46,15 +46,21 @@ body .header {
   border-bottom: 2px solid #d09b71;
   border-bottom-right-radius: 7px;
   border-bottom-left-radius: 7px;
+  max-height: 105px;
 }
 body .header .gudeaNav {
   font-family: "gudea-regular", Courier, monospace;
   font-size: 1.5rem;
   padding-left: 40px;
 }
+
+body .header .navbar {
+  max-height: 105px;
+}
+
 body .header .gudeaNav .logo {
-  max-width: 125px;
-  align-items: center;
+  max-height: 85px;
+  max-width: 90px;
   padding-bottom: 0px;
   padding-top: 0px;
 }

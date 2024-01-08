@@ -7,7 +7,7 @@
   <meta name="description" content="La Taberna de Bree: un refugio para los amantes de los juegos de rol y la fantasía. Aquí encontrarás una atmósfera medieval única, un menú inspirado en la Tierra Media y una comunidad de jugadores apasionada.">
   <meta name="keywords" content="taberna, Bree, juegos de rol, fantasía, medieval, taberna medieval, taberna temática, taberna de fantasía, juegos de rol en la taberna, comunidad de juegos de rol, comida inspirada en la Tierra Media, historia de la taberna, valores de la taberna, misión de la taberna, visión de la taberna">
 
-  <title>Sobre Nosotros || Jane the Pinscher</title>
+  <title>Admin || Jane the Pinscher</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -21,10 +21,11 @@
     <a class="animate__animated animate__tada animate__delay-3s animate__repeat-2" href="https://wa.me/5491158929435"
       target="_blank"><img class="logoWhatsapp" src="../Assets/icons/whatsapp.svg" alt="logo whastsapp"></a>
   </section>
-  <header class="header sticky-top">
-    <nav class="navbar sticky-top navbar-expand-md navbar-dark gudeaNav">
-      <div class="container-fluid align-items-end">
-        <a class="navbar-brand pt-0 pb-0" href="#"><img class="logo mt-3" width="230px" src="../Assets/img/logoJane.png"
+
+  <header id="header" class="header sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark gudeaNav">
+      <div class="container-fluid align-items-center">
+        <a class="navbar-brand pt-0 pb-0" href="#"><img class="logo" src="../Assets/img/logoJane.png"
             alt="Logo" /></a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -33,21 +34,15 @@
         </button>
 
         <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
+          <ul id="ulNavegacion" class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="../index.html">INICIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../Pages/menu.html">TIENDA</a>
+              <a class="nav-link" href="../pages/tienda.html">TIENDA</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../Pages/eventos.html">EVENTOS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">SOBRE NOSOTROS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../Pages/contacto.html">UNIRSE</a>
             </li>
             <li class="ms-5 me-5 nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -55,12 +50,12 @@
                 PERFIL
               </a>
               <ul class="dropdown-menu bg-dark text-center">
-                <li><a class="dropdown-item" href="#">Ver Perfil</a></li>
-                <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
+                <li><a class="dropdown-item" href="../pages/perfil.html">Ver Perfil</a></li>
+                <li><a class="dropdown-item" href="../pages/perfil.html">Editar Perfil</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                <li><a class="dropdown-item" href="../index.html">Cerrar Sesión</a></li>
               </ul>
             </li>
           </ul>
