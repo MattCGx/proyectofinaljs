@@ -1,11 +1,15 @@
 
 
 let formSearch = document.querySelector("#formSearch");
-let productsFilter = document.querySelector("#productsFilter");;
-let productsContainer = document.querySelector("#productsContainer");;
+let productosFilter = document.querySelector("#productosFilter");
+let productosContainer = document.querySelector("#productosContainer");
+let botonCarritoNotificacion = document.querySelector("#botonCarritoNotificacion");
+let botonComprar = document.querySelector(".botonComprar");
 
 export default {
     formSearch,
-    productsFilter,
-    productsContainer
+    productosFilter,
+    productosContainer,
+    botonCarritoNotificacion,
+    botonComprar
 };

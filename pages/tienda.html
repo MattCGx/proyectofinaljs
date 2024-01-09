@@ -14,9 +14,13 @@
 </head>
 
 <body>
-  <section class="sectionLogoWhatsapp fixed-bottom mb-2 me-2">
-    <a class="animate__animated animate__tada animate__delay-3s animate__repeat-2" href="https://wa.me/5491158929435"
-      target="_blank"><img class="logoWhatsapp" src="../Assets/icons/whatsapp.svg" alt="logo whastsapp"></a>
+  <section class="sectionCarritoNotificacion fixed-bottom mb-2 me-2">
+    <div id="botonCarritoNotificacion">
+    </div>
+    <button type="button"   class=" botonCarrito animate__animated animate__tada">
+      <img class="logoCarrito"
+        src="../Assets/icons/cart.svg">
+      </button>
   </section>
 
   <header id="header" class="header sticky-top">
@@ -64,159 +68,12 @@
 
   <main class="main">
 
-    <div class="container-fluid seccionMenu">
+    <div class="container-fluid seccionTienda">
+      <h1 class="tituloTienda tracking-in-contract-bck fontTitulo text-center fs-1">Tienda</h1>
 
-      <h1 class="tituloMenu tracking-in-contract-bck fontTitulo text-center fs-1">Nuestro menu</h1>
-
-      <h2 class="fontTituloSec text-center mt-3 fs-2" data-aos="fade-right">TRAGOS DE LA TIERRA MEDIA</h2>
-
-      <div class="card-group row justify-content-evenly" data-aos="fade-left">
-
-
-        <div class="card pt-3 m-1 col-md-12 col-lg3" style="max-width: 25rem;">
-          <img src="../Assets/img/menu2/ron.jpg" class="card-img-top" alt="vaso de ron">
-          <div class="card-body">
-            <h5 class="card-title fs-4">Jack Sparow</h5>
-            <p class="card-text fs-5">El Ron de la Isla Oscura es una bebida con un sabor intenso y complejo. El ron
-              oscuro
-              aporta el sabor ahumado, el jugo de limón el ácido y el jarabe de miel el dulzor. La rodaja de
-              limón para decorar le da un toque cítrico.</p>
-            <p class="card-text"><small class="text-muted">$1500</small></p>
-          </div>
-        </div>
-
-
-        <div class="card pt-3 m-1 col-md-12 col-lg3" style="max-width: 25rem;">
-          <img src="../Assets/img/menu2/gin.jpg" class="card-img-top" alt=" vaso con gin">
-          <div class="card-body">
-            <h5 class="card-title fs-4">Bola de fuego</h5>
-            <p class="card-text fs-5">El Gin Bola de Fuego es una bebida con un sabor intenso. El gin aporta el sabor
-              a enebro, el jugo de limón el ácido y el jarabe de frambuesa el dulzor. La rodaja de limón le
-              da un toque cítrico.</p>
-            <p class="card-text"><small class="text-muted">$1500</small></p>
-          </div>
-        </div>
-
-
-        <div class="card pt-3 m-1 col-md-12 col-lg3" style="max-width: 25rem;">
-          <img src="../Assets/img/menu2/cerveza.jpg" class="card-img-top" alt="pinta de cerveza">
-          <div class="card-body">
-            <h5 class="card-title fs-4">Excelsior</h5>
-            <p class="card-text fs-5">La Cerveza del Caballero es una bebida con un sabor intenso y robusto. La cerveza
-              oscura aporta el sabor amargo, la miel el dulzor y la canela el aroma</p>
-            <p class="card-text "><small class="text-muted">$900</small></p>
-          </div>
-        </div>
-
+      <div class="row justify-content-evenly" id="productosContainer" data-aos="slide-up">
       </div>
 
-      <h2 class="fontTituloSec text-center mt-3 fs-2" data-aos="fade-right">HAMBURGUESAS Y PIZZAS</h2>
-
-      <div class="card-group pt-2 row justify-content-evenly" data-aos="fade-left">
-
-        <div class="card pt-3 m-1 col-12 col-md-3" style="max-width: 25rem;">
-          <img src="../Assets/img/menu2/Hamburgesa 1.jpg" class="card-img-top" alt="imagen de Hamburguesa">
-          <div class="card-body">
-            <h5 class="card-title fs-4">Hamburguesa del Paladín</h5>
-            <p class="card-text fs-5">¡Una hamburguesa épica para un caballero! Carne de res jugosa, queso derretido,
-              bacon
-              crujiente y salsa secreta. ¡La mejor hamburguesa del reino!</p>
-            <p class="card-text"><small class="text-muted">$3500</small></p>
-          </div>
-        </div>
-        <div class="card pt-3 m-1 col-12 col-md-3" style="max-width: 25rem;">
-          <img src="../Assets/img/menu2/Hamburguesa 2.jpg" class="card-img-top" alt="imagen de Hamburguesa triple">
-          <div class="card-body">
-            <h5 class="card-title fs-4">Hamburguesa del bárbaro</h5>
-            <p class="card-text fs-5">¡Una hamburguesa para los más hambrientos! Tres pisos de carne de res jugosa,
-              queso
-              derretido, bacon crujiente y salsa secreta. ¡Un manjar para los verdaderos bárbaros!</p>
-            <p class="card-text"><small class="text-muted">$5000</small></p>
-          </div>
-        </div>
-        <div class="card pt-3 m-1 col-12 col-md-3" style="max-width: 25rem;">
-          <img src="../Assets/img/menu2/pizza1.jpg" class="card-img-top" alt="imagen de pizza">
-          <div class="card-body">
-            <h5 class="card-title fs-4">La pizza del rey</h5>
-            <p class="card-text fs-5">¡Una pizza digna de un rey! Masa crujiente, salsa de tomate casera, queso
-              mozzarella
-              de
-              primera calidad y los ingredientes más frescos. ¡Un sabor que te transportará a la Edad Media!</p>
-            <p class="card-text"><small class="text-muted">$3000</small></p>
-          </div>
-        </div>
-      </div>
-
-      <h2 class="fontTituloSec text-center mt-3 fs-2" data-aos="fade-right">PICADAS</h2>
-
-      <div class="card-group pt-2 row justify-content-evenly" data-aos="fade-left">
-
-        <div class="card pt-3 m-1 col-12 col-md-3" style="max-width: 25rem;">
-          <img src="../Assets/img/menu2/picada.jpg" class="card-img-top" alt="tabla de picada">
-          <div class="card-body">
-            <h5 class="card-title fs-4">El capricho de los elfos</h5>
-            <p class="card-text fs-5">¡Una picada para los paladares más exquisitos! Quesos finos, frutos secos,
-              frutas
-              exóticas, caviar, salmón ahumado y champagne. ¡Un menú digno de la nobleza élfica!</p>
-            <p class="card-text"><small class="text-muted">$3000</small></p>
-          </div>
-        </div>
-        <div class="card pt-3 m-1 col-sm-12 col-md-3" style="max-width: 25rem;">
-          <img src="../Assets/img/menu2/picada 2.jpg" class="card-img-top" alt="segunda tabla de picadas">
-          <div class="card-body">
-            <h5 class="card-title fs-4">La mesa del hechicero</h5>
-            <p class="card-text fs-5">¡Una picada para los más hambrientos! Carne asada, embutidos, quesos, verduras a
-              la
-              brasa, pan y cerveza. ¡Un menú que te dará la energía que necesitas para tus hechizos!</p>
-            <p class="card-text"><small class="text-muted">$3500</small></p>
-          </div>
-        </div>
-        <div class="card pt-3 m-1 col-sm-12 col-md-3" style="max-width: 25rem;">
-          <img src="../Assets/img/menu2/picada 3.jpg" class="card-img-top" alt="tercer tabla de picadas">
-          <div class="card-body">
-            <h5 class="card-title fs-4">El festín del bardo</h5>
-            <p class="card-text fs-5">¡Una picada para los paladares más exigentes! Jamón serrano, queso manchego,
-              chorizo,
-              morcilla, panceta, frutos secos y frutas frescas. ¡Una selección de delicatessens que te deleitarán!</p>
-            <p class="card-text"><small class="text-muted">$4000</small></p>
-          </div>
-        </div>
-      </div>
-
-      <h2 class="fontTituloSec text-center mt-3 fs-2" data-aos="fade-right">POSTRES Y CAFETERIA</h2>
-
-      <div class="card-group pt-2 row justify-content-evenly" data-aos="fade-left">
-        <div class="card pt-3 col-12 col-md-3 m-1" style="max-width: 25rem;">
-          <img src="../Assets/img/menu2/te1 (1).jpg" class="card-img-top" alt="taza de te">
-          <div class="card-body">
-            <h5 class="card-title fs-4">Elixir Élfico</h5>
-            <p class="card-text fs-5">¡Un té con poderes mágicos! Elaborado con hierbas y especias naturales, este té
-              te
-              ayudará a relajarte y a conectar con tu lado más espiritual.</p>
-            <p class="card-text"><small class="text-muted">$500</small></p>
-          </div>
-        </div>
-        <div class="card pt-3 m-1 col-12 col-md-3" style="max-width: 25rem;">
-          <img src="../Assets/img/menu2/cafee1 (1).jpg" class="card-img-top" alt="taza de cafe">
-          <div class="card-body">
-            <h5 class="card-title fs-4">Pócima del Nigromante</h5>
-            <p class="card-text fs-5">¡Un café fuerte y robusto! Elaborado con granos de café tostados en un fuego de
-              madera,
-              este café te dará la energía que necesitas para cualquier aventura.</p>
-            <p class="card-text"><small class="text-muted">$700</small></p>
-          </div>
-        </div>
-        <div class="card pt-3 m-1 col-12 col-md-3" style="max-width: 25rem;">
-          <img src="../Assets/img/menu2/torta chocolate.jpg" class="card-img-top" alt="imagen de postre de chocolate">
-          <div class="card-body">
-            <h5 class="card-title fs-4">Monte de la Perdición</h5>
-            <p class="card-text fs-5">¡Una torta de chocolate que te transportará a otro mundo! Hecha con chocolate
-              negro,
-              esta torta es un verdadero placer para los sentidos.</p>
-            <p class="card-text"><small class="text-muted">$1200</small></p>
-          </div>
-        </div>
-      </div>
     </div>
 
 
@@ -249,13 +106,15 @@
       <p>Copyright © 2024 Jane the Pinscher - Design by MCGX</p>
     </section>
   </footer>
+
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-  crossorigin="anonymous"></script>
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script type="module" src="../main.js"></script>
 </body>
 
 </html>

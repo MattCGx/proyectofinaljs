@@ -1,4 +1,4 @@
-export class Product {
+export class Producto {
     constructor() {
       this.id = Date.now().toString(36);
       this.nombre = nombre;
