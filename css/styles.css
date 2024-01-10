@@ -26,13 +26,50 @@ body {
   font-family: "gudea-regular";
   color: #000000;
 }
+
+body .offcanvas {
+  overflow-x: hidden;
+  box-shadow: 2px 2px 5px #212121;
+  background-color: #d09b71;
+  font-family: "gudea-regular", Courier, monospace;
+}
+
+body .offcanvas:hover{
+  box-shadow: 2px 2px 5px #52d446c2;
+}
+
+body .offcanvas .card 
+{
+background-color: #d09b71;
+border: none;
+}
+
+
+body .offcanvas .offcanvas-header .logoCarritoCanvas{
+  width: 50px;
+  background-color: rgba(92, 91, 91, 0.5058823529);
+  padding: 9px;
+  border-radius: 18px;
+}
+
+body .offcanvas .offcanvas-body .cardCanvasCarrito{
+  background-color: rgba(92, 91, 91, 0.5058823529);
+  
+}
+
+body .offcanvas .offcanvas-body .cardCanvasCarrito .eliminarElementoCarrito{
+  width: 20px;
+  padding: 0px;
+  border-radius: 5px;
+}
+
 body .main {
   overflow-x: hidden;
   background-color: #d09b71;
   font-family: "gudea-regular", Courier, monospace;
 }
 body .main .fontTitulo {
-  font-family: "kelmscot";
+  font-family: "montserrat";
 }
 body .main .fontTituloSec {
   font-family: "montserrat";
@@ -153,17 +190,6 @@ body .header .gudeaNav .navbar-toggler:active {
   body .gudeaNav .navbar-nav .active {
     background-color: rgba(126, 122, 122, 0.4431372549);
   }
-}
-
-body .navbar-nav .dropdown-menu .dropdown-item {
-  color: #beada3;
-  padding: 5px 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-}
-body .navbar-nav .dropdown-menu .dropdown-item:hover{
-  background-color: rgba(92, 91, 91, 0.5058823529) ;
 }
 
 body .footer {
@@ -318,16 +344,7 @@ body .main .subtituloyBanner .tracking-in-contract-bck {
     opacity: 1;
   }
 }
-body .main .contenedorVideo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-}
-body .main .contenedorVideo .videoYT {
-  box-shadow: 2px 2px 5px #000000;
-}
+
 
 body .main .formularioContacto {
   background-color: rgba(33, 33, 33, 0.6784313725);

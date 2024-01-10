@@ -2,12 +2,17 @@
 let productosFilter = document.querySelector("#productosFilter");
 let buscar = document.querySelector("#buscar");
 let productosContainer = document.querySelector("#productosContainer");
+let canvasBody = document.querySelector("#canvasBody");
+let carritoPadre = document.querySelector("#carritoPadre");
+let carritoContainer = document.querySelector("#carritoContainer");
+let totalCarrito = document.querySelector("#totalCarrito");
 let botonCarrito = document.querySelector("#botonCarrito");
-let botonCarritoNotificacion = document.querySelector("#botonCarritoNotificacion");
+let botonCarritoNotificacion = document.querySelector(
+  "#botonCarritoNotificacion"
+);
 let botonComprar = document.querySelector(".botonComprar");
 
 // Arrays
-
 
 let productosFiltrados = [];
 const productosData = [
@@ -162,35 +167,35 @@ const productosData = [
 let carritoCompra = JSON.parse(localStorage.getItem("carrito")) || [];
 
 // Clases
- class Producto {
-  constructor() {
-    this.id = Date.now().toString(36);
-    this.nombre = nombre;
-    this.precio = precio;
-    this.categoria = categoria;
-    this.descripcion = texto;
-    this.imagen = imagen;
-  }
-}
+//class Producto {
+//constructor() {
+//this.id = Date.now().toString(36);
+//this.nombre = nombre;
+//this.precio = precio;
+//this.categoria = categoria;
+//this.descripcion = texto;
+//this.imagen = imagen;
+//}
+//}
 
-class testimonio {
-  constructor(){
-    this.nombre = nombre;
-    this.texto = texto;
-  }
-}
+//class testimonio {
+//  constructor() {
+//    this.nombre = nombre;
+//    this.texto = texto;
+//  }
+//}
 
 // Funciones:
 
-const crearBoton = (texto, ...estilos) => {  
+const crearBoton = (texto, ...estilos) => {
   let button = document.createElement("button");
   button.innerText = texto;
-  button.classList.add(...estilos)
+  button.classList.add(...estilos);
   return button;
-}
+};
 
 const mostrarProductos = (listaproductos) => {
-  productosContainer.innerHTML =" ";
+  productosContainer.innerHTML = " ";
   listaproductos.forEach((producto) => {
     let card = document.createElement("div");
     card.className = "card col-4 g-4 text-center";
@@ -200,26 +205,96 @@ const mostrarProductos = (listaproductos) => {
       <div class="card-body">
         <h5 class="card-title fs-4">${producto.nombre}</h5>
         <p class="card-text fs-5">${producto.descripcion}</p>
-        <p class="card-text fs-4 badge bg-success">${producto.precio} Usd</p>
+        <p class="card-text fs-4 badge bg-success">$ ${producto.precio} USD</p>
       </div>
     `;
     let botonCompraContainer = document.createElement("div");
     botonCompraContainer.className = "text-center pt-2";
     card.appendChild(botonCompraContainer);
-    let botonCompra = crearBoton ("Comprar", "btn", "btn-primary", "shadow", "fs-4", "mb-3", "botonComprar");
+    let botonCompra = crearBoton(
+      "Comprar",
+      "btn",
+      "btn-primary",
+      "shadow",
+      "fs-4",
+      "mb-3",
+      "botonComprar"
+    );
     botonCompraContainer.appendChild(botonCompra);
-   productosContainer.appendChild(card);
-   botonCompra.onclick = () => agregarAlCarrito(producto.id);
+    productosContainer.appendChild(card);
+    botonCompra.onclick = () => agregarAlCarrito(producto.id);
   });
 };
 
+const verCarrito = (carritoCompra) => {
+  if (carritoCompra.length > 0) {
+    canvasBody.classList.remove("text-center");
+    carritoContainer.innerHTML = " ";
+    carritoCompra.forEach((producto) => {
+      let cardCarrito = document.createElement("li");
+      cardCarrito.className = "cardCanvasCarrito list-group-item";
+      cardCarrito.innerText = `${producto.nombre}`;
+      let cardCarritoPrecioyEliminar = document.createElement("div");
+      cardCarritoPrecioyEliminar.className = "row";
+      cardCarritoPrecioyEliminar.innerHTML = `<p class="card-text col-6"> $ ${producto.precio} USD</p>`;
+      cardCarrito.appendChild(cardCarritoPrecioyEliminar);
+      let botonEliminarCarrito = crearBoton(
+        "Eliminar",
+        "btn",
+        "col-3",
+        "btn-danger"
+      );
+      cardCarritoPrecioyEliminar.appendChild(botonEliminarCarrito);
+      carritoContainer.appendChild(cardCarrito);
+      botonEliminarCarrito.onclick = () =>{
+        eliminarProductoCarrito(producto.index);
+      }
+    });
+  }else{
+    canvasBody.className = "offcanvas-body text-center"
+    carritoContainer.innerHTML = `<h3 class="offcanvas-title text-center" >¡Tu Carrito está Vacío!</h3>   
+    <h4 class="offcanvas-title text-center">¿Por qué no revisas nuestra tienda y agregas algunos productos?</h4>
+     `;
+  }
+};
+
 const agregarAlCarrito = (productoID) => {
-  const productoAgregado = productosData.find(producto => producto.id === productoID);
+  const productoAgregado = productosData.find(
+    (producto) => producto.id === productoID
+  );
+  productoAgregado.index = Date.now().toString(36);
+
+  let confirmado = confirm(`se agregará objeto ${productoAgregado.nombre} al carrito`);
+  if (confirmado){
   carritoCompra.push(productoAgregado);
-  console.log(`se agrego objeto ${productoAgregado.nombre} al carrito`);
-  console.log(carritoCompra);
   localStorage.setItem("carrito", JSON.stringify(carritoCompra));
   verCarritoNotificacion();
+  verTotal(carritoCompra);
+  }
+};
+
+const verTotal = (carrito) => {
+  const total = carrito.reduce((acumulador, producto) => {
+    return acumulador + producto.precio;
+  }, 0);
+
+  if(carrito.length >0 ){
+  totalCarrito.innerText = `Total a Pagar: $${total} USD`;
+}else{totalCarrito.innerText = " ";}
+};
+
+const eliminarProductoCarrito = (productoIndex) => {
+  let index = carritoCompra.findIndex(
+    (producto) => producto.index === productoIndex
+  );
+
+  if (index !== -1) {
+    carritoCompra.splice(index, 1);
+    localStorage.setItem("carrito", JSON.stringify(carritoCompra));
+    verCarrito(carritoCompra);
+    verTotal(carritoCompra);
+    verCarritoNotificacion();
+  }
 };
 
 const verCarritoNotificacion = () => {
@@ -237,10 +312,43 @@ const verCarritoNotificacion = () => {
   }
 };
 
-
+const filtrarProductos = (categoriaProducto) => {
+  switch (categoriaProducto) {
+    case "Música":
+      productosFiltrados = productosData.filter(
+        (producto) => producto.categoria === "discografia"
+      );
+      mostrarProductos(productosFiltrados);
+      break;
+    case "Indumentaria":
+      productosFiltrados = productosData.filter(
+        (producto) => producto.categoria === "indumentaria"
+      );
+      mostrarProductos(productosFiltrados);
+      break;
+    case "Peliculas/Documentales":
+      productosFiltrados = productosData.filter(
+        (producto) => producto.categoria === "DVD"
+      );
+      mostrarProductos(productosFiltrados);
+      break;
+    case "Libros":
+      productosFiltrados = productosData.filter(
+        (producto) => producto.categoria === "libros"
+      );
+      mostrarProductos(productosFiltrados);
+      break;
+    case "Todo":
+      mostrarProductos(productosData);
+      break;
+    default:
+      mostrarProductos(productosData);
+  }
+};
 
 verCarritoNotificacion();
 mostrarProductos(productosData);
+verCarrito(carritoCompra);
 
 buscar.oninput = (event) => {
   if (event.target.value === " ") {
@@ -253,3 +361,11 @@ buscar.oninput = (event) => {
   }
 };
 
+productosFilter.onchange = () => {
+  filtrarProductos(productosFilter.value);
+};
+
+botonCarrito.onclick = () => {
+  verCarrito(carritoCompra);
+  verTotal(carritoCompra);
+};
