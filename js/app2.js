@@ -1,7 +1,15 @@
-// Arrays de productos y carrito
+// Selectores
+let productosFilter = document.querySelector("#productosFilter");
+let buscar = document.querySelector("#buscar");
+let productosContainer = document.querySelector("#productosContainer");
+let botonCarrito = document.querySelector("#botonCarrito");
+let botonCarritoNotificacion = document.querySelector("#botonCarritoNotificacion");
+let botonComprar = document.querySelector(".botonComprar");
 
-let testimonios = [];
+// Arrays
 
+
+let productosFiltrados = [];
 const productosData = [
   {
     id: "1yey0oh",
@@ -151,12 +159,97 @@ const productosData = [
     imagen: "imagen_dvd4.jpeg",
   },
 ];
+let carritoCompra = JSON.parse(localStorage.getItem("carrito")) || [];
 
+// Clases
+ class Producto {
+  constructor() {
+    this.id = Date.now().toString(36);
+    this.nombre = nombre;
+    this.precio = precio;
+    this.categoria = categoria;
+    this.descripcion = texto;
+    this.imagen = imagen;
+  }
+}
 
-let carrito = [];
+class testimonio {
+  constructor(){
+    this.nombre = nombre;
+    this.texto = texto;
+  }
+}
 
-export default {
-  productosData,
-  carrito,
-  testimonios,
+// Funciones:
+
+const crearBoton = (texto, ...estilos) => {  
+  let button = document.createElement("button");
+  button.innerText = texto;
+  button.classList.add(...estilos)
+  return button;
+}
+
+const mostrarProductos = (listaproductos) => {
+  productosContainer.innerHTML =" ";
+  listaproductos.forEach((producto) => {
+    let card = document.createElement("div");
+    card.className = "card col-4 g-4 text-center";
+    card.style.width = "18rem";
+    card.innerHTML = `
+      <img src="../Assets/img/tienda/${producto.imagen}" class="card-img-top mt-2">
+      <div class="card-body">
+        <h5 class="card-title fs-4">${producto.nombre}</h5>
+        <p class="card-text fs-5">${producto.descripcion}</p>
+        <p class="card-text fs-4 badge bg-success">${producto.precio} Usd</p>
+      </div>
+    `;
+    let botonCompraContainer = document.createElement("div");
+    botonCompraContainer.className = "text-center pt-2";
+    card.appendChild(botonCompraContainer);
+    let botonCompra = crearBoton ("Comprar", "btn", "btn-primary", "shadow", "fs-4", "mb-3", "botonComprar");
+    botonCompraContainer.appendChild(botonCompra);
+   productosContainer.appendChild(card);
+   botonCompra.onclick = () => agregarAlCarrito(producto.id);
+  });
 };
+
+const agregarAlCarrito = (productoID) => {
+  const productoAgregado = productosData.find(producto => producto.id === productoID);
+  carritoCompra.push(productoAgregado);
+  console.log(`se agrego objeto ${productoAgregado.nombre} al carrito`);
+  console.log(carritoCompra);
+  localStorage.setItem("carrito", JSON.stringify(carritoCompra));
+  verCarritoNotificacion();
+};
+
+const verCarritoNotificacion = () => {
+  botonCarritoNotificacion.innerHTML = " ";
+
+  if (carritoCompra !== undefined) {
+    let notificacion = document.createElement("div");
+    notificacion.className = "notificacionCarrito";
+    notificacion.innerText = `${carritoCompra.length}`;
+
+    if (carritoCompra.length > 0) {
+      console.log("hay objetos en el carrito");
+      botonCarritoNotificacion.appendChild(notificacion);
+    }
+  }
+};
+
+
+
+verCarritoNotificacion();
+mostrarProductos(productosData);
+
+buscar.oninput = (event) => {
+  if (event.target.value === " ") {
+    mostrarProductos(productosData);
+  } else {
+    productosFiltrados = productosData.filter((producto) =>
+      producto.nombre.toLowerCase().includes(event.target.value)
+    );
+    mostrarProductos(productosFiltrados);
+  }
+};
+
