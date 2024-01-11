@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import Toastify from "toastify-js";
+import "toastify-js/src/toastify.css";
 
 // Selectores
 let productosFilter = document.querySelector("#productosFilter");
@@ -249,12 +250,12 @@ const verCarrito = (carritoCompra) => {
       );
       cardCarritoPrecioyEliminar.appendChild(botonEliminarCarrito);
       carritoContainer.appendChild(cardCarrito);
-      botonEliminarCarrito.onclick = () =>{
+      botonEliminarCarrito.onclick = () => {
         eliminarProductoCarrito(producto.index);
-      }
+      };
     });
-  }else{
-    canvasBody.className = "offcanvas-body text-center"
+  } else {
+    canvasBody.className = "offcanvas-body text-center";
     carritoContainer.innerHTML = `<h3 class="offcanvas-title text-center" >¡Tu Carrito está Vacío!</h3>   
     <h4 class="offcanvas-title text-center">¿Por qué no revisas nuestra tienda y agregas algunos productos?</h4>
      `;
@@ -274,47 +275,58 @@ const agregarAlCarrito = (productoID) => {
     confirmButtonText: "Si",
     cancelButtonText: "No",
     cancelButtonColor: "red",
-    confirmButtonColor: "green"
-}).then((resp) => {
-  if (resp.isConfirmed) {
+    confirmButtonColor: "green",
+  }).then((resp) => {
+    if (resp.isConfirmed) {
+      productoAgregado.index = Date.now().toString(36);
+      carritoCompra.push(productoAgregado);
+      localStorage.setItem("carrito", JSON.stringify(carritoCompra));
+      Toastify({
+        text: `Nuevo producto en Carrito: " ${productoAgregado.nombre}" `,
+        position: "right",
+        gravity: "bottom",
+        offset: {
+          y: 95,
+        },
+        style: {
+          background: "linear-gradient(258deg, #85FFBD 0%, #FFFB7D 100%)",
+          color: "#000000",
+          borderRadius: "10px",
+        },
+      }).showToast();
 
-  productoAgregado.index = Date.now().toString(36);  
-  carritoCompra.push(productoAgregado);
-  localStorage.setItem("carrito", JSON.stringify(carritoCompra));
- 
+      Swal.fire({
+        icon: "success",
+        background: "#d09b71",
+        title: "¡Porducto agregado!",
+        showConfirmButton: false,
+        timer: 1000,
+      });
 
-  Swal.fire({
-    icon: "success",
-    background: "#d09b71",
-    title: "¡Porducto agregado!",
-    showConfirmButton: false,
-    timer: 1000
-});
-
-verCarritoNotificacion();
-verTotal(carritoCompra);
-  }else{
-    Swal.fire({
-      icon: "error",
-      background: "#d09b71",
-      title: "¡Compra Cancelada!",
-      showConfirmButton: false,
-      timer: 1000
-    });
-  };
-});
+      verCarritoNotificacion();
+      verTotal(carritoCompra);
+    } else {
+      Swal.fire({
+        icon: "error",
+        background: "#d09b71",
+        title: "¡Compra Cancelada!",
+        showConfirmButton: false,
+        timer: 1000,
+      });
+    }
+  });
 };
-
-
 
 const verTotal = (carrito) => {
   const total = carrito.reduce((acumulador, producto) => {
     return acumulador + producto.precio;
   }, 0);
 
-  if(carrito.length >0 ){
-  totalCarrito.innerText = `Total a Pagar: $${total} USD`;
-}else{totalCarrito.innerText = " ";}
+  if (carrito.length > 0) {
+    totalCarrito.innerText = `Total a Pagar: $${total} USD`;
+  } else {
+    totalCarrito.innerText = " ";
+  }
 };
 
 const eliminarProductoCarrito = (productoIndex) => {
@@ -330,34 +342,49 @@ const eliminarProductoCarrito = (productoIndex) => {
     confirmButtonText: "Si",
     cancelButtonText: "No",
     cancelButtonColor: "green",
-    confirmButtonColor: "orange"
-}).then((resp) => {
-  if (resp.isConfirmed) {
-  if (index !== -1) {
-    carritoCompra.splice(index, 1);
-    localStorage.setItem("carrito", JSON.stringify(carritoCompra));
+    confirmButtonColor: "orange",
+  }).then((resp) => {
+    if (resp.isConfirmed) {
+      Toastify({
+        text: `Producto Eliminado: " ${carritoCompra[index].nombre}" `,
+        position: "right",
+        gravity: "bottom",
+        offset: {
+          y: 95,
+        },
+        style: {
+          background:
+            "linear-gradient(111deg, #FBAB7E 0%, #F7CE68 33%, #f20e0e 100%)",
+          color: "#000000",
+          borderRadius: "10px",
+        },
+      }).showToast();
 
-    Swal.fire({
-      icon: "success",
-      background: "#d09b71",
-      title: "¡Porducto Eliminado!",
-      showConfirmButton: false,
-      timer: 1000
+      if (index !== -1) {
+        carritoCompra.splice(index, 1);
+        localStorage.setItem("carrito", JSON.stringify(carritoCompra));
+        Swal.fire({
+          icon: "success",
+          background: "#d09b71",
+          title: "¡Porducto Eliminado!",
+          showConfirmButton: false,
+          timer: 1000,
+        });
+
+        verCarrito(carritoCompra);
+        verTotal(carritoCompra);
+        verCarritoNotificacion();
+      }
+    } else {
+      Swal.fire({
+        icon: "error",
+        background: "#d09b71",
+        title: "¡Porducto no Eliminado!",
+        showConfirmButton: false,
+        timer: 1000,
+      });
+    }
   });
-    verCarrito(carritoCompra);
-    verTotal(carritoCompra);
-    verCarritoNotificacion();
-  }
-}else{
-  Swal.fire({
-    icon: "error",
-    background: "#d09b71",
-    title: "¡Porducto no Eliminado!",
-    showConfirmButton: false,
-    timer: 1000
-});
-}
-})
 };
 
 const verCarritoNotificacion = () => {
