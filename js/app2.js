@@ -1,3 +1,6 @@
+import Swal from "sweetalert2";
+import Toastify from "toastify-js";
+
 // Selectores
 let productosFilter = document.querySelector("#productosFilter");
 let buscar = document.querySelector("#buscar");
@@ -262,16 +265,47 @@ const agregarAlCarrito = (productoID) => {
   const productoAgregado = productosData.find(
     (producto) => producto.id === productoID
   );
-  productoAgregado.index = Date.now().toString(36);
 
-  let confirmado = confirm(`se agregará objeto ${productoAgregado.nombre} al carrito`);
-  if (confirmado){
+  Swal.fire({
+    title: `¿Agregar ${productoAgregado.nombre} al carrito?`,
+    icon: "question",
+    background: "#d09b71",
+    showCancelButton: true,
+    confirmButtonText: "Si",
+    cancelButtonText: "No",
+    cancelButtonColor: "red",
+    confirmButtonColor: "green"
+}).then((resp) => {
+  if (resp.isConfirmed) {
+
+  productoAgregado.index = Date.now().toString(36);  
   carritoCompra.push(productoAgregado);
   localStorage.setItem("carrito", JSON.stringify(carritoCompra));
-  verCarritoNotificacion();
-  verTotal(carritoCompra);
-  }
+ 
+
+  Swal.fire({
+    icon: "success",
+    background: "#d09b71",
+    title: "¡Porducto agregado!",
+    showConfirmButton: false,
+    timer: 1000
+});
+
+verCarritoNotificacion();
+verTotal(carritoCompra);
+  }else{
+    Swal.fire({
+      icon: "error",
+      background: "#d09b71",
+      title: "¡Compra Cancelada!",
+      showConfirmButton: false,
+      timer: 1000
+    });
+  };
+});
 };
+
+
 
 const verTotal = (carrito) => {
   const total = carrito.reduce((acumulador, producto) => {
@@ -288,13 +322,42 @@ const eliminarProductoCarrito = (productoIndex) => {
     (producto) => producto.index === productoIndex
   );
 
+  Swal.fire({
+    title: `¿Estás seguiro que deseas eliminar ${carritoCompra[index].nombre} del carrito?`,
+    icon: "warning",
+    background: "#d09b71",
+    showCancelButton: true,
+    confirmButtonText: "Si",
+    cancelButtonText: "No",
+    cancelButtonColor: "green",
+    confirmButtonColor: "orange"
+}).then((resp) => {
+  if (resp.isConfirmed) {
   if (index !== -1) {
     carritoCompra.splice(index, 1);
     localStorage.setItem("carrito", JSON.stringify(carritoCompra));
+
+    Swal.fire({
+      icon: "success",
+      background: "#d09b71",
+      title: "¡Porducto Eliminado!",
+      showConfirmButton: false,
+      timer: 1000
+  });
     verCarrito(carritoCompra);
     verTotal(carritoCompra);
     verCarritoNotificacion();
   }
+}else{
+  Swal.fire({
+    icon: "error",
+    background: "#d09b71",
+    title: "¡Porducto no Eliminado!",
+    showConfirmButton: false,
+    timer: 1000
+});
+}
+})
 };
 
 const verCarritoNotificacion = () => {
