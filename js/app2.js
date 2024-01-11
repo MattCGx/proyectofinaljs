@@ -320,7 +320,7 @@ const agregarAlCarrito = (productoID) => {
 const verTotal = (carrito) => {
   const total = carrito.reduce((acumulador, producto) => {
     return acumulador + producto.precio;
-  }, 0);
+  }, 0).toFixed(2);
 
   if (carrito.length > 0) {
     totalCarrito.innerText = `Total a Pagar: $${total} USD`;
