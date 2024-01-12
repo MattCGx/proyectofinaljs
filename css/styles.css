@@ -10,15 +10,15 @@
 /*fonts*/
 @font-face {
   font-family: "gudea-regular";
-  src: url("../Assets/fonts/Gudea-Regular.ttf");
+  src: url("../assets/fonts/Gudea-Regular.ttf");
 }
 @font-face {
   font-family: "montserrat";
-  src: url("../Assets/fonts/Montserrat-VariableFont_wght.ttf");
+  src: url("../assets/fonts/Montserrat-VariableFont_wght.ttf");
 }
 @font-face {
   font-family: "kelmscot";
-  src: url("../Assets/fonts/KELMSCOT.TTF");
+  src: url("../assets/fonts/KELMSCOT.TTF");
 }
 /*Generalidades Body*/
 body {
@@ -102,7 +102,7 @@ body .header .gudeaNav .logo {
   padding-top: 0px;
 }
 body .header .gudeaNav .navbar-toggler-icon {
-  background-image: url("../Assets/icons/bone-nav.svg");
+  background-image: url("../assets/icons/bone-nav.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 40px;
