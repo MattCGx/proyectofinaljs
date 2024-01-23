@@ -38,7 +38,7 @@ body .offcanvas:hover{
   box-shadow: 2px 2px 5px #52d446c2;
 }
 
-body .offcanvas .card 
+body .offcanvas .canvascard 
 {
 background-color: #d09b71;
 border: none;

@@ -1,276 +1,224 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jane the Pinscher | Inicio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
 
-  <body>
-    <header class="header sticky-top">
-      <nav class="navbar navbar-expand-md navbar-dark gudeaNav">
-        <div class="container-fluid align-items-end">
-          <a class="navbar-brand pt-0 pb-0" href="index.html"
-            ><img
-              class="logo"
-              width="180px"
-              src="./assets/img/logoJane.png"
-              alt="Logo"
-          /></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jane the Pinscher | Inicio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
 
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+<body>
+  <header class="header sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark gudeaNav">
+      <div class="container-fluid align-items-end">
+        <a class="navbar-brand pt-0 pb-0" href="index.html"><img class="logo" width="180px"
+            src="./assets/img/logoJane.png" alt="Logo" /></a>
 
-          <div
-            class="collapse navbar-collapse text-center"
-            id="navbarSupportedContent"
-          >
-            <ul
-              class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end"
-            >
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >INICIO</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./pages/tienda.html">TIENDA</a>
-              </li>
-              <li class="ms-5 me-5 nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  PERFIL
-                </a>
-                <ul class="dropdown-menu bg-dark text-center">
-                  <li>
-                    <a class="dropdown-item" href="./pages/404.html"
-                      >Ver Perfil</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="./pages/404.html"
-                      >Editar Perfil</a
-                    >
-                  </li>
-                  <li>
-                    <hr class="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="index.html">Cerrar Sesión</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <section class="sectionCarritoNotificacion fixed-bottom mb-2 me-2">
-      <div id="botonCarritoNotificacion"></div>
-      <a
-        type="button"
-        href="./pages/tienda.html"
-        id="botonCarrito"
-        class="botonCarrito animate__animated animate__tada"
-      >
-        <img class="logoCarrito" src="../assets/icons/cart.svg" />
-      </a>
-    </section>
-
-    <main class="main">
-      <!--carrousel con fotos-->
-      <div
-        id="carouselExampleCaptions"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="./assets/img/Inicio/diapo2.jpg"
-              class="d-block w-100 kenburns-top"
-            />
-            <div class="carousel-caption d-xs-block">
-              <h5 class="slogan fontTitulo fs-xs-2">Jane The Pisncher</h5>
-              <p class="textoSlide fs-md-3">Unete a la jauría</p>
-            </div>
-          </div>
-          diapo2.jpg
-          <div class="carousel-item">
-            <img
-              src="./assets/img/Inicio/rsz_2diapo1.jpg"
-              class="d-block w-100 kenburns-top"
-            />
-            <div class="carousel-caption d-xs-block">
-              <h5 class="slogan fontTitulo fs-xs-2">Jane The Pisncher</h5>
-              <p class="textoSlide fs-md-3">Unete a la jauría</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img
-              src="./assets/img/Inicio/rsz_diapo3.jpg"
-              class="d-block w-100 kenburns-top"
-            />
-            <div class="carousel-caption d-xs-block">
-              <h5 class="slogan fontTitulo fs-xs-2">Jane The Pisncher</h5>
-              <p class="textoSlide fs-md-3">Unete a la jauría</p>
-            </div>
-          </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">INICIO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#seccionTienda">TIENDA</a>
+            </li>
+            <li class="ms-5 me-5 nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                PERFIL
+              </a>
+              <ul class="dropdown-menu bg-dark text-center">
+                <li>
+                  <a class="dropdown-item" href="#">Ver Perfil</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Editar Perfil</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
+    </nav>
+  </header>
 
-      <!-- Presentación de la pagina, bloque de texto-->
-      <div class="container-fluid">
-        <section class="row">
-          <div
-            class="bloqueTextoFrontpage col-xs-1 col-md-5 col-lg-5 pt-4 mt-3"
-            data-aos="zoom-in"
-          >
-            <h1 class="fs-2 fontTitulo">¡Bienvenido al Reino de Jane!</h1>
-            <p class="textoFrontpage fs-5">
-              En el corazón de nuestra comunidad se encuentra Jane, la venerada
-              perra pinscher que ha guiado a sus seguidores hacia la iluminación
-              y la alegría. Este no es solo un lugar, sino un santuario dedicado
-              a honrar su majestuosidad y sabiduría canina.
-            </p>
-            <p class="textoFrontpage fs-5">
-              <span class="bold">¿Quién es Jane?</span> Es más que una mascota;
-              es una deidad de cuatro patas, una guía espiritual que ha
-              inspirado devoción y lealtad inquebrantable. A través de sus ojos
-              centelleantes y su cola siempre en alto, nos enseña lecciones de
-              amor incondicional, gratitud y la importancia de vivir en el
-              momento presente.
-            </p>
-            <p class="textoFrontpage fs-5">
-              <span class="bold">Únete a la Manada</span> y sumérgete en el
-              misticismo de Jane. Descubre los rituales secretos, las historias
-              sagradas y la profunda conexión que comparten sus seguidores. Este
-              es un lugar donde la dicha canina se entrelaza con la
-              espiritualidad humana, creando un lazo indestructible entre
-              nosotros y nuestra adorada líder de cuatro patas.
-            </p>
-          </div>
 
-          <!-- Foto de Jane -->
-          <div
-            class="mapaGoogle col-xs-12 col-md-6 col-lg-6 mt-3"
-            data-aos="fade-left"
-          >
-            <iframe
-              class="mapaIframe"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d820.3865330050536!2d-58.70063432042604!3d-34.666163520787684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1694407296540!5m2!1ses-419!2sar"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-
-            <p class="direccionMapa">Av. Pres. Juan Domingo Perón 23899</p>
-            <p class="direccionMapa">
-              San Antonio de Padua, Provincia de Buenos Aires
-            </p>
-          </div>
-        </section>
+  <main class="main">
+    <!--carrousel con fotos-->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
       </div>
-    </main>
-
-    <footer class="footer container-fluid pt-2 pb-1 mt-3">
-      <div class="row">
-        <section class="footerRedes me-2 text-center">
-          <h3>SEGUINOS TAMBIEN EN</h3>
-          <div class="contenedorRedes me-auto">
-            <a href="https://www.facebook.com" target="_blank"
-              ><img class="logoRedes me-1" src="./assets/icons/facebook.svg"
-            /></a>
-            <a href="https://www.instagram.com" target="_blank"
-              ><img class="logoRedes ms-1" src="./assets/icons/instagram.svg"
-            /></a>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./assets/img/Inicio/Jane1.jpg" class="d-block w-100 kenburns-top" />
+          <div class="carousel-caption d-xs-block">
+            <h5 class="slogan fontTitulo fs-xs-2">Jane The Pinscher</h5>
+            <p class="textoSlide fs-md-3">Unete a la jauría</p>
           </div>
-        </section>
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/img/Inicio/Jane3.jpg" class="d-block w-100 kenburns-top" />
+          <div class="carousel-caption d-xs-block">
+            <h5 class="slogan fontTitulo fs-xs-2">Jane The Pinscher</h5>
+            <p class="textoSlide fs-md-3">Unete a la jauría</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/img/Inicio/Jane4.jpg" class="d-block w-100 kenburns-top" />
+          <div class="carousel-caption d-xs-block">
+            <h5 class="slogan fontTitulo fs-xs-2">Jane The Pinscher</h5>
+            <p class="textoSlide fs-md-3">Unete a la jauría</p>
+          </div>
+        </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 
-      <section class="footerCopyright text-center row mt-1">
-        <p>Copyright © 2024 Jane the Pinscher - Design by MCGX</p>
+    <!-- Presentación de la pagina, bloque de texto-->
+    <div class="container-fluid">
+      <section class="row">
+        <div class="bloqueTextoFrontpage col-auto pt-4 mt-3">
+          <h1 class="fs-2 fontTitulo">¡Bienvenido al Reino de Jane!</h1>
+          <p class="textoFrontpage fs-5">
+            En el corazón de nuestra comunidad se encuentra Jane, la venerada
+            perra pinscher que ha guiado a sus seguidores hacia la iluminación
+            y la alegría. Este no es solo un lugar, sino un santuario dedicado
+            a honrar su majestuosidad y sabiduría canina.
+          </p>
+          <p class="textoFrontpage fs-5">
+            <span class="bold">¿Quién es Jane?</span> Es más que una mascota;
+            es una deidad de cuatro patas, una guía espiritual que ha
+            inspirado devoción y lealtad inquebrantable. A través de sus ojos
+            centelleantes y su cola siempre en alto, nos enseña lecciones de
+            amor incondicional, gratitud y la importancia de vivir en el
+            momento presente.
+          </p>
+      
+          <div id="seccionTienda"></div>
+
+          <p class="textoFrontpage fs-5">
+            <span class="bold">Únete a la Manada</span> y sumérgete en el
+            misticismo de Jane. Descubre los rituales secretos, las historias
+            sagradas y la profunda conexión que comparten sus seguidores. Este
+            es un lugar donde la dicha canina se entrelaza con la
+            espiritualidad humana, creando un lazo indestructible entre
+            nosotros y nuestra adorada líder de cuatro patas.
+          </p>
+        </div>
+       
       </section>
-    </footer>
+    </div>
 
-    
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    <script type="module" src="./js/app2.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <!-- Seccion tienda-->
+    <div  class="container-fluid seccionTienda">
+      <h1  class="tituloTienda tracking-in-contract-bck fontTitulo text-center fs-1">Tienda</h1>
+
+      <div class="busquedayFiltros">
+        <nav class="navbar navbar-expand-md navbar-dark gudeaNav fs-6">
+          <div class="container-fluid">
+            <form class="d-flex" role="search">
+              <input class="text-light-emphasis form-control me-2 bg-secondary border-warning-subtle  fs-4" id="buscar"
+                type="search" placeholder="Buscar Productos" aria-label="Search">
+            </form>
+          </div>
+          <select class="text-light-emphasis form-select bg-secondary border-warning-subtle fs-4" id="productosFilter"
+            aria-label="Filrtar Categorías">
+            <option selected>Filtrar por Categorías</option>
+            <option value="Todo">Todo</option>
+            <option value="Libros">Libros</option>
+            <option value="Música">Música</option>
+            <option value="Indumentaria">Indumentaria</option>
+            <option value="Peliculas/Documentales">Peliculas/Documentales</option>
+          </select>
+        </nav>
+
+      </div>
+      <!-- productos container-->
+      <div class="row justify-content-evenly" id="productosContainer">
+      </div>
+
+    </div>
+
+    <div class="offcanvas offcanvas-start rounded" data-bs-scroll="true" style="width: fit-content;"
+      data-bs-backdrop="true" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+      <div class="offcanvas-header fontTitulo">
+        <img class="logoCarritoCanvas" src="./assets/icons/cart.svg">
+        <h3 class="offcanvas-title" id="offcanvasScrollingLabel">Tu Carrito</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div id="canvasBody" class="offcanvas-body">
+        <div class="canvascard" style="width: 22rem;">
+          <ul id="carritoContainer" class="list-group list-group-flush">
+          </ul>
+          <!-- <a href="www.mercadopago.com" target="_blank" class="fontTitulo badge border shadow rounded text-decoration-none fs-4" id="totalCarrito"></a>-->
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <section class="sectionCarritoNotificacion fixed-bottom mb-2 me-2">
+    <div id="botonCarritoNotificacion">
+    </div>
+    <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+      aria-controls="offcanvasScrolling" id="botonCarrito" class="botonCarrito animate__animated animate__tada">
+      <img class="logoCarrito" src="./assets/icons/cart.svg">
+    </button>
+  </section>
+
+  <footer class="footer container-fluid pt-2 pb-1 mt-3">
+    <div class="row">
+      <section class="footerRedes me-2 text-center">
+        <h3>SEGUINOS TAMBIEN EN</h3>
+        <div class="contenedorRedes me-auto">
+          <a href="https://www.facebook.com" target="_blank"><img class="logoRedes me-1"
+              src="./assets/icons/facebook.svg" /></a>
+          <a href="https://www.instagram.com" target="_blank"><img class="logoRedes ms-1"
+              src="./assets/icons/instagram.svg" /></a>
+        </div>
+      </section>
+    </div>
+
+    <section class="footerCopyright text-center row mt-1">
+      <p>Copyright © 2024 Jane the Pinscher - Design by MCGX</p>
+    </section>
+  </footer>
+
+
+  <script type="module" src="./js/app2.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
