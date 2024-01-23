@@ -318,11 +318,6 @@ body .main .card .btn-secondary .botonInsc {
 body .main .card:hover {
   box-shadow: 3px 3px 7px #fff;
 }
-@media screen and (max-width: 767px) {
-  body .cardInvertida {
-    display: none;
-  }
-}
 
 body .main .subtituloyBanner {
   background-color: rgba(33, 33, 33, 0.6784313725);
@@ -344,7 +339,6 @@ body .main .subtituloyBanner .tracking-in-contract-bck {
     opacity: 1;
   }
 }
-
 
 body .main .formularioContacto {
   background-color: rgba(33, 33, 33, 0.6784313725);
@@ -378,9 +372,6 @@ body .main .formularioContacto .form-label {
   border: 1px solid #fff;
   padding: 5px;
   border-radius: 0.3rem;
-}
-body .main .seccionTrabajo {
-  border-top: 2px solid #212121;
 }
 
 body .sectionCarritoNotificacion {
