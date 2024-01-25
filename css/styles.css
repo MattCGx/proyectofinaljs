@@ -223,19 +223,7 @@ body .main .bloqueTextoFrontpage {
   background-color: rgba(33, 33, 33, 0.3019607843);
   box-shadow: 2px 2px 5px #000000;
 }
-body .main .mapaGoogle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-}
-body .main .mapaGoogle .mapaIframe {
-  width: 75%;
-  height: 300px;
-  box-shadow: 2px 2px 5px #000000;
-  border-radius: 17px;
-}
+
 @keyframes kenburns-top {
   0% {
     transform: scale(1) translateY(0);
@@ -340,34 +328,34 @@ body .main .subtituloyBanner .tracking-in-contract-bck {
   }
 }
 
-body .main .formularioContacto {
+body .main .formularioPerfil {
   background-color: rgba(33, 33, 33, 0.6784313725);
   box-shadow: 2px 2px 5px #000000;
 }
-body .main .formularioContacto .input-group-text {
+body .main .formularioPerfil .input-group-text {
   background-color: #d09b71;
 }
-body .main .formularioContacto .btn-outline-primary {
+body .main .formularioPerfil .btn-outline-primary {
   color: #d09b71;
   border-color: #d09b71;
 }
-body .main .formularioContacto .btn-outline-primary:hover {
+body .main .formularioPerfil .btn-outline-primary:hover {
   color: #000000;
   background-color: #d09b71;
   border-color: #000000;
 }
-body .main .formularioContacto .btn-outline-primary:focus {
+body .main .formularioPerfil .btn-outline-primary:focus {
   box-shadow: 0 0 0 0.25rem rgba(33, 33, 33, 0.6784313725);
 }
-body .main .formularioContacto .form-control:focus {
+body .main .formularioPerfil .form-control:focus {
   border-color: #d09b71;
   box-shadow: 0 0 0 0.25rem rgba(33, 33, 33, 0.6784313725);
 }
-body .main .formularioContacto .form-select:focus {
+body .main .formularioPerfil .form-select:focus {
   border-color: #d09b71;
   box-shadow: 0 0 0 0.25rem rgba(33, 33, 33, 0.6784313725);
 }
-body .main .formularioContacto .form-label {
+body .main .formularioPerfil .form-label {
   background-color: #d09b71;
   border: 1px solid #fff;
   padding: 5px;

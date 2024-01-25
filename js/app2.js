@@ -15,6 +15,9 @@ let botonCarritoNotificacion = document.querySelector(
   "#botonCarritoNotificacion"
 );
 
+// Variables Perfil
+
+
 
 // Arrays
 
@@ -30,7 +33,7 @@ const importarProductos = async () => {
   mostrarProductos(productosData);
 }
 
-// Funciones:
+// Funciones globales
 
 const crearBoton = (texto, ...estilos) => {
   let button = document.createElement("button");
@@ -38,6 +41,12 @@ const crearBoton = (texto, ...estilos) => {
   button.classList.add(...estilos);
   return button;
 };
+
+// Funciones Perfil
+
+
+
+// Funciones Tienda:
 
 const mostrarProductos = (listaproductos) => {
   productosContainer.innerHTML = " ";
@@ -286,7 +295,6 @@ const filtrarProductos = (categoriaProducto) => {
       mostrarProductos(productosData);
   }
 };
-
 
 
 buscar.oninput = (event) => {
