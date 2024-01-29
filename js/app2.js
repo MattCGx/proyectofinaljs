@@ -15,7 +15,6 @@ let botonCarritoNotificacion = document.querySelector(
   "#botonCarritoNotificacion"
 );
 
-// Variables Perfil
 
 
 
@@ -31,7 +30,7 @@ const importarProductos = async () => {
   const resp = await fetch("/data/productos.json");
   productosData = await resp.json();
   mostrarProductos(productosData);
-}
+};
 
 // Funciones globales
 
@@ -41,10 +40,6 @@ const crearBoton = (texto, ...estilos) => {
   button.classList.add(...estilos);
   return button;
 };
-
-// Funciones Perfil
-
-
 
 // Funciones Tienda:
 
@@ -319,7 +314,5 @@ botonCarrito.onclick = () => {
 
 
 importarProductos();
-
-
 verCarritoNotificacion();
 verCarrito(carritoCompra);

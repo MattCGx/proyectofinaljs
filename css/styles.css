@@ -329,9 +329,14 @@ body .main .subtituloyBanner .tracking-in-contract-bck {
 }
 
 body .main .formularioPerfil {
-  background-color: rgba(33, 33, 33, 0.6784313725);
+  background-color: rgba(33, 33, 33, 0.822);
   box-shadow: 2px 2px 5px #000000;
 }
+
+body .main .formularioPerfil .modal-title {
+  color: #d09b71;
+}
+
 body .main .formularioPerfil .input-group-text {
   background-color: #d09b71;
 }
